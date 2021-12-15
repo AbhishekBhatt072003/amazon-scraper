@@ -63,18 +63,18 @@ app.get('/products/:productId/offers', async (req, res) => {
 
 // get search request 
 
-// app.get('/search/:searchQuery', async (req, res) => {
-//     const { searchQuery } = req.params;
-//     const { api_key } = req.query;
-//     try {
-//         const responce = await request(`${generateScraperUrl(api_key)}&url=https://www.amazon.com/s?k=${searchQuery}`)
-//         res.json(JSON.parse(responce));
-//     } catch (error) {
+app.get('/search/:searchQuery', async (req, res) => {
+    const { searchQuery } = req.params;
+    const { api_key } = req.query;
+    try {
+        const responce = await request(`${generateScraperUrl(api_key)}&url=https://www.amazon.com/s?k=${searchQuery}`)
+        res.json(JSON.parse(responce));
+    } catch (error) {
 
-//         res.json(error);
+        res.json(error);
 
-//     }
-// })
+    }
+})
 
 
 
