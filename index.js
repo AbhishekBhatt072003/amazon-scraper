@@ -30,20 +30,20 @@ app.get('/products/:productId', async (req, res) => {
     }
 })
 
-// get products reviews 
+// get products reviews
 
-// app.get('/products/:productId/reviews', async (req, res) => {
-//     const { productId } = req.params;
-//     const { api_key } = req.query;
-//     try {
-//         const responce = await request(`${generateScraperUrl(api_key)}&url=https://www.amazon.com/product-reviews/${productId}`)
-//         res.json(JSON.parse(responce));
-//     } catch (error) {
+app.get('/products/:productId/reviews', async (req, res) => {
+    const { productId } = req.params;
+    const { api_key } = req.query;
+    try {
+        const responce = await request(`${generateScraperUrl(api_key)}&url=https://www.amazon.com/product-reviews/${productId}`)
+        res.json(JSON.parse(responce));
+    } catch (error) {
 
-//         res.json(error);
+        res.json(error);
 
-//     }
-// })
+    }
+})
 
 // get offers on the product
 
